@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
               Container(
                 padding: const EdgeInsets.all(20),
                 decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.15),
+                  color: Colors.white.withValues(alpha: 0.15),
                   borderRadius: BorderRadius.circular(24),
                 ),
                 child: const Text('🏛️', style: TextStyle(fontSize: 48)),
@@ -97,7 +97,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   borderRadius: BorderRadius.circular(28),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.black.withOpacity(0.1),
+                      color: Colors.black.withValues(alpha: 0.1),
                       blurRadius: 20,
                       offset: const Offset(0, 10),
                     ),
@@ -315,7 +315,7 @@ class HomeScreen extends StatelessWidget {
                           style: TextStyle(
                             color: Color(0xFFFBBF24),
                             fontSize: 10,
-                            fontWeight: FontWeight.extrabold,
+                            fontWeight: FontWeight.w800,
                           ),
                         ),
                         SizedBox(height: 2),
@@ -352,9 +352,9 @@ class HomeScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                _buildQuickAccessItem(Icons.article, 'Surat', Colors.emerald),
+                _buildQuickAccessItem(Icons.article, 'Surat', Colors.green),
                 _buildQuickAccessItem(Icons.shopping_bag, 'Pasar', Colors.amber),
-                _buildQuickAccessItem(Icons.warning, 'Lapor', Colors.rose),
+                _buildQuickAccessItem(Icons.warning, 'Lapor', Colors.red),
                 _buildQuickAccessItem(Icons.pie_chart, 'APBDes', Colors.blue),
               ],
             ),
@@ -384,7 +384,7 @@ class HomeScreen extends StatelessWidget {
                       width: 60,
                       height: 60,
                       decoration: BoxDecoration(
-                        color: Colors.emerald.shade100,
+                        color: const Color(0xFFD1FAE5),
                         borderRadius: BorderRadius.circular(12),
                       ),
                       child: const Center(
@@ -612,7 +612,7 @@ class PasarScreen extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  color: Colors.emerald.shade50,
+                 color: const Color(0xFFECFDF5),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Center(child: Text(emoji, style: const TextStyle(fontSize: 48))),
@@ -620,7 +620,7 @@ class PasarScreen extends StatelessWidget {
             ),
             const SizedBox(height: 8),
             Text(title, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12), maxLines: 1),
-            Text(price, style: const TextStyle(fontWeight: FontWeight.extrabold, color: Color(0xFF059669))),
+            Text(price, style: const TextStyle(fontWeight: FontWeight.w800, color: Color(0xFF059669))),
             Text('Penjual: $seller', style: const TextStyle(fontSize: 9, color: Colors.grey)),
             const SizedBox(height: 6),
             SizedBox(
@@ -668,9 +668,9 @@ class LaporScreen extends StatelessWidget {
               width: double.infinity,
               height: 120,
               decoration: BoxDecoration(
-                color: Colors.slate.shade100,
+                color: const Color(0xFFF1F5F9),
                 borderRadius: BorderRadius.circular(14),
-                border: Border.all(color: Colors.slate.shade300, style: BorderStyle.solid),
+                border: Border.all(color: const Color(0xFFCBD5E1), style: BorderStyle.solid),
               ),
               child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -684,7 +684,7 @@ class LaporScreen extends StatelessWidget {
             const Text('Kategori Laporan', style: TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
             DropdownButtonFormField<String>(
-              value: 'Jalan / Jembatan Rusak',
+              initialValue: 'Jalan / Jembatan Rusak',
               items: const [
                 DropdownMenuItem(value: 'Jalan / Jembatan Rusak', child: Text('Jalan / Jembatan Rusak')),
                 DropdownMenuItem(value: 'Lampu Jalan Padam', child: Text('Lampu Jalan Padam')),
